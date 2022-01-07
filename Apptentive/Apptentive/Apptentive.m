@@ -43,6 +43,8 @@ NSNotificationName const ApptentiveCustomDeviceDataChangedNotification = @"Appte
 NSNotificationName const ApptentiveInteractionsDidUpdateNotification = @"ApptentiveInteractionsDidUpdateNotification";
 NSNotificationName const ApptentiveInteractionsShouldDismissNotification = @"ApptentiveInteractionsShouldDismissNotification";
 NSNotificationName const ApptentiveConversationCreatedNotification = @"ApptentiveConversationCreatedNotification";
+NSNotificationName const ApptentiveFeedbackSentNotification = @"ApptentiveFeedbackSentNotification";
+
 NSNotificationName const ApptentiveManifestRawDataDidReceiveNotification = @"ApptentiveManifestRawDataDidReceiveNotification";
 
 NSString *const ApptentiveSurveyIDKey = @"ApptentiveSurveyIDKey";

@@ -152,7 +152,7 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 }
 
 - (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-	[self.greetingView traitCollectionDidChange:previousTraitCollection];
+	// [self.greetingView traitCollectionDidChange:previousTraitCollection];
 
 	[self resizeFooterView:nil];
 }
@@ -192,7 +192,7 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 - (void)viewDidLayoutSubviews {
 	if (self.isSubsequentDisplay == NO) {
 		[self engageGreetingViewEventIfNecessary];
-		[self scrollToLastMessageAnimated:NO];
+		//[self scrollToLastMessageAnimated:NO];
 
 		self.isSubsequentDisplay = YES;
 	}
@@ -665,6 +665,8 @@ typedef NS_ENUM(NSInteger, ATMessageCenterState) {
 
 - (IBAction)send:(id)sender {
 	[self.viewModel sendMessage:self.trimmedMessage withAttachments:self.attachmentController.attachments];
+
+	[[NSNotificationCenter defaultCenter] postNotificationName:ApptentiveFeedbackSentNotification object:Apptentive.shared userInfo:@{ @"BodyTxt": self.trimmedMessage}];
 
 	[self.attachmentController clear];
 	[self.attachmentController resignFirstResponder];
